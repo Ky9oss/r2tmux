@@ -10,7 +10,7 @@ if [ "$1" = "find" ]; then
     tmux send-keys -X top-line
     tmux send-keys -X search-forward $KEYWORD
 elif [ "$1" = "seek" ]; then
-    output=$(tmux capture-pane -p -S 0 -E 1 | grep "xAdvc")
+    output=$(tmux capture-pane -p -S 0 -E 1 | grep -E "xAdvc|xaDvc")
 
     # tmux copy-mode
     tmux send-keys w\; send-keys -X begin-selection\; send-keys E\; send-keys -X copy-selection-and-cancel
