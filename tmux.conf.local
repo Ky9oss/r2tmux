@@ -523,3 +523,6 @@ bind-key v run-shell -b "~/workspace/dev/bash/r2tmux/show-var-alias.sh"
 bind-key f run-shell -b "~/workspace/dev/bash/r2tmux/enter-function.sh find"
 bind-key F run-shell -b "~/workspace/dev/bash/r2tmux/enter-function.sh seek"
 
+# copy mode with relative line numbers
+unbind [
+bind-key [ run-shell -b "~/workspace/dev/bash/r2tmux/copy_mode_with_line_numbers.sh"
