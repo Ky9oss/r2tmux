@@ -4,7 +4,7 @@
 
 declare -r LINE_NUMBER_PANE_WIDTH=3
 declare -r LINE_NUMBER_UPDATE_DELAY=0.1
-declare -r COLOR_NUMBERS_RGB="101;112;161"
+declare -r COLOR_NUMBERS_RGB="201;212;255"
 declare -r COLOR_ACTIVE_NUMBER_RGB="255;158;100"
 
 open_line_number_split(){
