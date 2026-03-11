@@ -5,7 +5,7 @@
     <img src="https://img.shields.io/badge/Maintainer-Ky9oss-red" alt="Maintainer">
     <br>
     <br>
-    <img src="img/wrench2.png" alt="" width="203.5" height="203.5">
+    <img src="img/wrench2.png" alt="" width="253.5" height="203.5">
     <br>
     <br>
 </div>
