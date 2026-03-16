@@ -1,9 +1,12 @@
 #!/bin/bash
 #
-# Fix osc52 bug in tmux
-# $1: Script's filename
+# Run osc52-copy.sh in a hidden pane in tmux.
+# Use it when tmux osc52 is unavailable due to unknown errors.
 #
 # By Ky9oss
+
+CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+OSC52_SCRIPT="$CURRENT_DIR/osc52-copy.sh"
 
 old_pane=$(tmux display-message -p "#{pane_id}")
 
@@ -21,10 +24,10 @@ if [[ -z $new_pane ]]; then
   tmux select-pane -t "$old_pane"
 fi
 
-if [[ -x $1 ]]; then
-  tmux send-keys -t "$new_pane" "$1" Enter
-elif [[ -f $1 ]]; then
-  tmux send-keys -t "$new_pane" "chmod +x $1 && $1" Enter
+if [[ -x $OSC52_SCRIPT ]]; then
+  tmux send-keys -t "$new_pane" "$OSC52_SCRIPT" Enter
+elif [[ -f $OSC52_SCRIPT ]]; then
+  tmux send-keys -t "$new_pane" "chmod +x $OSC52_SCRIPT && $OSC52_SCRIPT" Enter
 else
   printf "File does not exist!";
 fi

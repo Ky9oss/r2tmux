@@ -1,6 +1,8 @@
 #!/bin/bash
 #
-# Fix osc52 bug in tmux
+# Copy by tmux-passthrough escape sequences instead of normal OSC52.
+# Use it when tmux normal osc52 is unavailable due to unknown errors.
+# 
 # By Ky9oss
 
 copied=$(tmux save-buffer -)
