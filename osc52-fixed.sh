@@ -14,13 +14,13 @@ list_panes=$(tmux list-panes -F "#{pane_width}:#{pane_id}")
 readarray arr <<<"$list_panes"
 
 for item in "${arr[@]}"; do
-  if [[ "$item" =~ 0:([^[:space:]]+) ]]; then
+  if [[ "$item" =~ 1:([^[:space:]]+) ]]; then
     new_pane=${BASH_REMATCH[1]}
   fi
 done
 
 if [[ -z $new_pane ]]; then
-  new_pane=$(tmux split-window -h -l 0 -P -F "#{pane_id}")
+  new_pane=$(tmux split-window -h -l 1 -P -F "#{pane_id}" 'bash --noprofile --norc') # use clean bash
   tmux select-pane -t "$old_pane"
 fi
 
@@ -32,5 +32,5 @@ else
   printf "File does not exist!";
 fi
 
-sleep 0.2
+sleep 0.02
 tmux kill-pane -t "$new_pane"
