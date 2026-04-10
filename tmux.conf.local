@@ -541,3 +541,9 @@ set -g @resurrect-strategy-nvim 'session'
 set -g allow-passthrough on
 set -g set-clipboard off
 bind-key -T copy-mode-vi y send-keys -X copy-selection-and-cancel \; run-shell -b "~/workspace/dev/bash/r2tmux/osc52-fixed.sh"
+
+# Automatic rename window name to current path
+set-option -g automatic-rename on
+set-option -g automatic-rename-format '#(basename "#{pane_current_path}")'
+# set-option -g automatic-rename-format '#{=-8:pane_current_path}'
+
