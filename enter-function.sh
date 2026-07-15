@@ -21,7 +21,8 @@ elif [ "$1" = "seek" ]; then
     else # if Visual panel
         tmux send-keys :
         tmux send-keys "s "\; send-keys "$function_name"\; send-keys Enter
-        tmux send-keys C-c
+        # tmux send-keys C-c
+        tmux send-keys Enter
     fi
 
 else
